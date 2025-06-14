@@ -1,0 +1,49 @@
+app:
+  host: localhost
+  port: 7161
+  name: watermark-app
+
+watermark:
+  type: "image"
+  text: "© Watermarked"
+  watermark_dir: "./assets/logo/" # 儲存所有水印圖片的資料夾
+  position: "bottom-right"
+  margin: 10
+  opacity: 0.5
+  scale: 0.5
+
+image:
+  random_seed: 123456
+  image_dir: "/tmp/uploads/"
+  output_dir: "/tmp/outputs/"
+
+constants:
+  string_length: 1000
+  random_limit: 10000
+
+url:
+  root: "/api"
+  output: "/outputs"
+  image:
+    root: "/image"
+    upload: "/upload"
+    apply: "/apply"
+    download: "/download"
+    delete: "/delete"
+  watermark:
+    root: "/watermark"
+    upload: "/upload"
+    apply: "/apply"
+    delete: "/delete"
+    list: "/list"
+    get: ":id"
+
+database:
+  title: "postgres"
+  host: "localhost"
+  port: 5432
+  user: postgres
+  password: postgres
+  engine: postgresql
+  name: watermark_db
+  sslmode: disable
